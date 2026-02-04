@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Probabilistic Method — Your Name</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                tags: 'ams',
+                macros: {
+                    E: '\\mathbb{E}',
+                    Pr: '\\operatorname{Pr}',
+                    R: '\\mathbb{R}',
+                    N: '\\mathbb{N}'
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="../index.html" class="nav-name">Your Name</a>
+                <div class="nav-links">
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#research">Research</a>
+                    <a href="../index.html#writings">Writings</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <article class="article">
+                <header class="article-header">
+                    <h1>The Probabilistic Method: A Gentle Introduction</h1>
+                    <p class="article-meta">January 2025 · 12 min read</p>
+                </header>
+
+                <div class="article-content">
+                    <p class="lead">
+                        The probabilistic method is one of the most beautiful proof techniques in combinatorics. 
+                        It allows us to prove that objects with certain properties <em>exist</em> without 
+                        ever constructing them explicitly. This note introduces the basic ideas through 
+                        Erdős's elegant proof that Ramsey numbers grow exponentially.
+                    </p>
+
+                    <h2>The Basic Idea</h2>
+                    <p>
+                        Suppose we want to prove that an object with property $P$ exists in some collection $\mathcal{C}$. 
+                        The probabilistic method works as follows: define a probability distribution over $\mathcal{C}$, 
+                        and show that a random object has property $P$ with positive probability. If 
+                        $\Pr[X \text{ has property } P] > 0$, then such an object must exist!
+                    </p>
+                    <p>
+                        This might seem almost tautological, but its power lies in the fact that computing 
+                        probabilities is often much easier than explicit construction.
+                    </p>
+
+                    <h2>Ramsey Numbers</h2>
+                    <p>
+                        Let's recall the definition. The <em>Ramsey number</em> $R(k, k)$ is the smallest $n$ 
+                        such that any 2-coloring of the edges of $K_n$ contains a monochromatic $K_k$.
+                    </p>
+                    <p>
+                        Ramsey's theorem tells us that $R(k,k)$ is finite for all $k$. But how fast does it grow? 
+                        The upper bound from the standard proof gives $R(k,k) \le \binom{2k-2}{k-1} \le 4^k$. 
+                        Can we do better? Is there a clever coloring that avoids monochromatic cliques?
+                    </p>
+
+                    <div class="theorem">
+                        <p><strong>Theorem (Erdős, 1947).</strong> 
+                        For all $k \ge 3$, we have $R(k,k) > 2^{k/2}$.</p>
+                    </div>
+
+                    <p>
+                        This was revolutionary—it showed that the exponential growth is <em>necessary</em>, 
+                        not just an artifact of a weak proof.
+                    </p>
+
+                    <h2>The Proof</h2>
+                    <p>
+                        We'll show that for $n = \lfloor 2^{k/2} \rfloor$, there exists a 2-coloring of $K_n$ 
+                        with no monochromatic $K_k$. Consider a <em>random</em> coloring: each edge is colored 
+                        red or blue independently with probability $1/2$ each.
+                    </p>
+                    <p>
+                        Fix a set $S$ of $k$ vertices. What's the probability that $S$ forms a monochromatic clique?
+                    </p>
+                    <p>
+                        The number of edges in $K_k$ is $\binom{k}{2}$. For $S$ to be monochromatic red, all 
+                        $\binom{k}{2}$ edges must be red, which happens with probability $2^{-\binom{k}{2}}$. 
+                        The same holds for blue. By the union bound:
+                    </p>
+                    $$
+                    \Pr[S \text{ is monochromatic}] = 2 \cdot 2^{-\binom{k}{2}} = 2^{1 - \binom{k}{2}}
+                    $$
+                    <p>
+                        Now we take a union bound over all $\binom{n}{k}$ possible $k$-subsets:
+                    </p>
+                    $$
+                    \Pr[\exists \text{ monochromatic } K_k] \le \binom{n}{k} \cdot 2^{1-\binom{k}{2}}
+                    $$
+                    <p>
+                        Using $\binom{n}{k} \le n^k / k!$ and $\binom{k}{2} = k(k-1)/2$, we get:
+                    </p>
+                    $$
+                    \Pr[\exists \text{ monochromatic } K_k] \le \frac{n^k}{k!} \cdot 2^{1 - k(k-1)/2}
+                    $$
+                    <p>
+                        Substituting $n = 2^{k/2}$:
+                    </p>
+                    $$
+                    \frac{(2^{k/2})^k}{k!} \cdot 2^{1-k(k-1)/2} = \frac{2^{k^2/2} \cdot 2^{1-k(k-1)/2}}{k!} = \frac{2^{(k+2)/2}}{k!}
+                    $$
+                    <p>
+                        For $k \ge 3$, we have $k! > 2^{(k+2)/2}$, so this probability is less than 1. 
+                        Therefore, with positive probability, a random coloring has <em>no</em> monochromatic $K_k$. 
+                        Such a coloring must exist. $\square$
+                    </p>
+
+                    <h2>What Makes This Remarkable</h2>
+                    <p>
+                        Erdős's proof tells us that "most" colorings work, yet we cannot explicitly write down 
+                        a single one! For $k = 10$, we know $R(10,10) > 32$, but no one has ever exhibited 
+                        a specific 2-coloring of $K_{32}$ avoiding monochromatic $K_{10}$.
+                    </p>
+                    <p>
+                        This existential-but-non-constructive nature troubled some mathematicians initially. 
+                        But the method has proven so powerful that it's now a cornerstone of combinatorics, 
+                        with applications ranging from coding theory to geometry.
+                    </p>
+
+                    <h2>Beyond the Basics</h2>
+                    <p>
+                        The simple union bound argument above is just the beginning. More sophisticated 
+                        techniques include:
+                    </p>
+                    <ul>
+                        <li><strong>Expectation method:</strong> Show $\E[X] > 0$ for some random variable counting good objects</li>
+                        <li><strong>Alteration:</strong> Start with a random object and "fix" bad parts</li>
+                        <li><strong>Lovász Local Lemma:</strong> Handle dependencies between bad events</li>
+                        <li><strong>Entropy compression:</strong> Use information-theoretic arguments</li>
+                    </ul>
+                    <p>
+                        I'll cover the Lovász Local Lemma in a future post—it's the tool you reach for 
+                        when events aren't independent but are "mostly" independent.
+                    </p>
+
+                    <div class="note">
+                        <p><strong>Further Reading:</strong> Alon and Spencer's <em>The Probabilistic Method</em> 
+                        is the definitive reference. For a gentler introduction, see Chapter 5 of 
+                        Matoušek and Nešetřil's <em>Invitation to Discrete Mathematics</em>.</p>
+                    </div>
+                </div>
+
+                <footer class="article-footer">
+                    <a href="../index.html#writings">← Back to writings</a>
+                </footer>
+            </article>
+        </main>
+
+        <footer>
+            <p>© 2025 Your Name · Built from scratch with care</p>
+        </footer>
+    </div>
+</body>
+</html>
