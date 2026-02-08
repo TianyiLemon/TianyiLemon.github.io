@@ -40,14 +40,8 @@
                     <p class="tagline">Theoretical Computer Science · Number Theory · Combinatorics</p>
                     <p class="bio">
                         I'm a researcher interested in the mathematical foundations of computation. 
-                        I try to understand complexity from a mathematical and physical point of view, 
-                        as well as understand pure math from a computational and algorithmic point of view.
-                    </p>
-                    <p class="bio">
-                        I believe advances in computational power can lead to many exciting 
-                        discoveries in mathematics and science. My recent work explores 
-                        circuit complexity over finite fields and 2-adic structures 
-                        in Zagier's MZV matrices.
+                        My recent work explores circuit complexity over finite fields 
+                        and 2-adic structures in Zagier's MZV matrices.
                     </p>
                     <p class="bio">
                         Outside of research, I play rhythm games and watch cute girl anime.
@@ -59,37 +53,48 @@
                 <h2>Research</h2>
                 <div class="papers">
                     <article class="paper">
-                        <h3>Cross-Characteristic Gate Complexity: Upper Bounds and Structural Theorems</h3>
+                        <h3>Cross-Characteristic Gate Complexity of the Algebraic Torus</h3>
                         <p class="authors">Yipin Wang</p>
-                        <p class="venue">Preprint, 2026</p>
+                        <p class="venue">ECCC, 2026</p>
                         <p class="abstract">
-                            We study the minimum number of "gates" — compositions of affine maps $\mathbb{F}_q^n \to \mathbb{F}_q$ 
-                            with arbitrary functions $\mathbb{F}_q \to \mathbb{F}_p$ — needed to represent the indicator 
-                            function of the algebraic torus $(\mathbb{F}_q^*)^n \subset \mathbb{F}_q^n$, where $p$ and $q$ 
-                            are distinct primes. We formulate gate complexity as a minimum coset weight problem in a 
-                            cross-characteristic linear code, prove $t(p, 2, n) = 2n - 1$ for all primes $p \geq 3$ via 
-                            Walsh–Fourier analysis, and establish $t(2, 3, n) = 2^{n-1}$ for all $n$ via a coordinate 
-                            induction on $\mathbb{F}_4$-Fourier support exploiting the Vandermonde structure of the DFT matrix.
+                            We determine the gate complexity $t(2,q,n) = (q-1)^{n-1}$ for all odd prime powers $q$,
+                            where a gate is a composition of an affine map $\mathbb{F}_q^n \to \mathbb{F}_q$ with an 
+                            arbitrary function $\mathbb{F}_q \to \mathbb{F}_2$. The upper bound is an explicit 
+                            character-sum construction; the lower bound uses a Frobenius orbit counting argument 
+                            over $\mathbb{F}_{2^k}$, exploiting the self-duality $\widehat{\mathbf{1}_T} = \mathbf{1}_T$.
                         </p>
                         <div class="paper-links">
-                            <a href="writings/gate_complexity_v4.pdf">PDF</a>
+                            <a href="writings/gate_complexity_v5.pdf">PDF</a>
+                        </div>
+                    </article>
+
+                    <article class="paper">
+                        <h3>A Fourier-Analytic Switching Lemma over $\mathbb{F}_p$ and the AC$^0$ Lower Bound for Generalized Parity</h3>
+                        <p class="authors">Yipin Wang</p>
+                        <p class="venue">Submitted to CCC 2026</p>
+                        <p class="abstract">
+                            We prove a switching lemma for constant-depth circuits over $\mathbb{F}_p$ 
+                            with generalized AND/OR gates, extending Tal's Fourier-analytic approach from the Boolean setting. 
+                            The key ingredient is an exact computation of the $L_1$ Fourier mass of AND/OR gates over $\mathbb{F}_p$. 
+                            As a consequence, constant-depth circuits of sub-exponential size 
+                            over $\mathbb{F}_p$ cannot compute $\mathbf{1}[\sum_i x_i \equiv 0 \pmod{p}]$.
+                        </p>
+                        <div class="paper-links">
+                            <a href="writings/switching_lemma_v6.pdf">PDF</a>
+                            <a href="https://github.com/TianyiLemon/fourier-switching-lemma-Fp">GitHub</a>
                         </div>
                     </article>
 
                     <article class="paper">
                         <h3>Spanning Trees, Modular Symbols, and a New Arithmetic Invariant of Elliptic Curves</h3>
                         <p class="authors">Yipin Wang</p>
-                        <p class="venue">Research notes, 2026</p>
+                        <p class="venue">Preprint, 2026</p>
                         <p class="abstract">
-                            We observe that averaging the plus modular symbol $\{0, t/u\}^+$ over the feasible vectors
-                            of Alon–Bucić–Gishboliner (spanning tree counts of series-parallel graphs) gives a rational
-                            limit $c_f \in \mathbb{Q}$ for each weight-2 newform $f$. The proof reduces to a Markov chain
-                            on $\mathbb{P}^1(\mathbb{Z}/N\mathbb{Z})$ with geometric transition weights. The product
-                            $\lambda_f = c_f \cdot \Omega^+$ is an isogeny invariant, computed for all 93 optimal curves
-                            of conductor $\leq 100$. We find that the denominators of $c_f$ are governed by a single
-                            determinant depending only on $N$, and that "alien primes" in these denominators arise as
-                            norms in the splitting field of an irreducible Steinberg characteristic polynomial. All
-                            computed values satisfy $c_f > 0$, but we do not know how to prove this in general.
+                            Averaging the plus modular symbol $\{0, t/u\}^+$ over spanning-tree-weighted feasible vectors
+                            gives a rational invariant $c_f \in \mathbb{Q}$ for each weight-2 newform $f$. 
+                            The proof reduces to a Markov chain on $\mathbb{P}^1(\mathbb{Z}/N\mathbb{Z})$.
+                            We compute $c_f$ for all optimal curves of conductor $\leq 100$ and study the 
+                            prime structure of its denominators.
                         </p>
                         <div class="paper-links">
                             <a href="writings/paper_v8.pdf">PDF</a>
@@ -101,37 +106,13 @@
                         <p class="authors">Yipin Wang</p>
                         <p class="venue">Submitted to <em>Proceedings of the AMS</em>, 2026</p>
                         <p class="abstract">
-                            We investigate the 2-adic properties of the inverse of Zagier's matrix $M_K$, which 
-                            expresses Hoffman elements $H(a, b) = \zeta(\underbrace{2,\ldots,2}_a, 3, \underbrace{2,\ldots,2}_b)$ 
-                            as rational linear combinations of products $\zeta(2)^m \zeta(2n + 1)$. We prove that 
-                            all entries in the last row of $(M_K)^{-1}$ have 2-adic valuation zero (Theorem 2.1), 
-                            implying that all coefficients in the decomposition of $\zeta(2)^{K-1}\zeta(3)$ into the 
-                            Hoffman basis are odd integers. More generally, we establish a row minimum formula 
-                            (Theorem 2.5): the minimum 2-adic valuation in row $K-1-i$ of $(M_K)^{-1}$ equals 
-                            $2i - v_2(i+1)$. As a companion result, we give a closed-form inverse for the binomial 
-                            core matrix $B_N[a,i] = \binom{2i}{2a}$ in terms of Euler–secant numbers, with the 
-                            exact 2-adic valuation governed by binary carry counting via Kummer's theorem.
+                            We prove that all coefficients in the decomposition of $\zeta(2)^{K-1}\zeta(3)$ into the 
+                            Hoffman basis are odd integers, and establish a row minimum formula for the 2-adic 
+                            valuation of $(M_K)^{-1}$. As a companion result, we give a closed-form inverse for the 
+                            binomial core matrix $B_N[a,i] = \binom{2i}{2a}$ in terms of Euler–secant numbers.
                         </p>
                         <div class="paper-links">
                             <a href="writings/zagier_2adic_paper_v4.pdf">PDF</a>
-                        </div>
-                    </article>
-
-                    <article class="paper">
-                        <h3>A Fourier-Analytic Switching Lemma over $\mathbb{F}_p$ and the AC$^0$ Lower Bound for Generalized Parity</h3>
-                        <p class="authors">Yipin Wang</p>
-                        <p class="venue">Preprint, 2026</p>
-                        <p class="abstract">
-                            We prove a switching lemma for constant-depth circuits over the alphabet $\mathbb{F}_p$ 
-                            with generalized AND/OR gates, extending Tal's Fourier-analytic approach from the Boolean setting. 
-                            The key new ingredient is a direct computation of the $L_1$ Fourier mass of AND/OR gates over $\mathbb{F}_p$, 
-                            which yields the lower bound $L_1^{\geq s}(\mathrm{AND}_s) = ((p-1)/p)^s$ without any conjectural input. 
-                            As a consequence, we obtain that for any prime $p$, constant-depth circuits of sub-exponential size 
-                            over $\mathbb{F}_p$ cannot compute $\mathbf{1}[\sum_i x_i \equiv 0 \pmod{p}]$.
-                        </p>
-                        <div class="paper-links">
-                            <a href="writings/switching_lemma_v6.pdf">PDF</a>
-                            <a href="https://github.com/TianyiLemon/fourier-switching-lemma-Fp">GitHub</a>
                         </div>
                     </article>
                 </div>
