@@ -56,31 +56,17 @@
                 <h3 class="research-area">Circuit Complexity</h3>
                 <div class="papers">
                     <article class="paper">
-                        <h3>Gate Complexity of the Algebraic Torus: the General Case</h3>
-                        <p class="authors">Yipin Wang</p>
-                        <p class="venue">Preprint, 2026</p>
-                        <p class="abstract">
-                            We determine the gate complexity $t(p,q,n)$ for all primes $p$ and prime powers $q$ with $\mathrm{char}(\mathbb{F}_q) \neq p$.
-                            A dichotomy emerges: $t(p,q,n) = (q-1)^{n-1}$ when $p \mid (q-1)$, and
-                            $t(p,q,n) = (q^n - 1)/(q-1)$ when $p \nmid (q-1)$.
-                            The split is governed by the $\mathbb{F}_{p^k}$-Fourier support of the torus indicator,
-                            which is $(\mathbb{F}_q^*)^n$ in the first case and $\mathbb{F}_q^n \setminus \{0\}$ in the second.
-                        </p>
-                        <div class="paper-links">
-                            <a href="writings/general_p.pdf">PDF</a>
-                        </div>
-                    </article>
-
-                    <article class="paper">
                         <h3>Cross-Characteristic Gate Complexity of the Algebraic Torus</h3>
                         <p class="authors">Yipin Wang</p>
                         <p class="venue">ECCC, 2026</p>
                         <p class="abstract">
-                            We determine the gate complexity $t(2,q,n) = (q-1)^{n-1}$ for all odd prime powers $q$,
-                            where a gate is a composition of an affine map $\mathbb{F}_q^n \to \mathbb{F}_q$ with an 
-                            arbitrary function $\mathbb{F}_q \to \mathbb{F}_2$. The upper bound is an explicit 
-                            character-sum construction; the lower bound uses a Frobenius orbit counting argument 
-                            over $\mathbb{F}_{2^k}$, exploiting the self-duality $\widehat{\mathbf{1}_T} = \mathbf{1}_T$.
+                            We determine the gate complexity $t(p,q,n)$ for all primes $p$ and prime powers $q$ with $\mathrm{char}(\mathbb{F}_q) \neq p$.
+                            A dichotomy emerges: $t(p,q,n) = (q-1)^{n-1}$ when $p \mid (q-1)$, and
+                            $t(p,q,n) = (q^n - 1)/(q-1)$ when $p \nmid (q-1)$.
+                            The lower bound uses a Frobenius orbit counting argument over $\mathbb{F}_{p^k}$, 
+                            exploiting the self-duality $\widehat{\mathbf{1}_T} = \mathbf{1}_T$.
+                            We give a cohomological interpretation: gate complexity equals the Frobenius trace 
+                            on $H^*_c(\mathbb{G}_m^{n-1}, \mathbb{F}_p)$.
                         </p>
                         <div class="paper-links">
                             <a href="writings/gate_complexity_focs.pdf">PDF</a>
@@ -88,15 +74,16 @@
                     </article>
 
                     <article class="paper">
-                        <h3>A Cohomological Interpretation of Gate Complexity</h3>
+                        <h3>Cohomological Self-Duality of the Torus Indicator</h3>
                         <p class="authors">Yipin Wang</p>
                         <p class="venue">Preprint, 2026</p>
                         <p class="abstract">
-                            We prove that the gate complexity $t(p,q,n) = (q-1)^{n-1}$ equals the trace of Frobenius 
-                            on the compactly supported étale cohomology of the torus:
-                            $t(p,q,n) = \mathrm{Tr}(\mathrm{Frob}_q \mid H^*_c(\mathbb{G}_m^{n-1}, \mathbb{F}_p))$.
-                            This places circuit complexity in the framework of the Weil conjectures and suggests 
-                            connections to the Langlands program via the Steinberg representation.
+                            We prove that the self-duality $\widehat{\mathbf{1}_T} = \mathbf{1}_T$ is a consequence of 
+                            Poincaré duality in étale cohomology combined with the self-duality of the algebraic torus 
+                            as a group variety. The proof proceeds via Grothendieck's function-sheaf correspondence, 
+                            identifying $\mathbf{1}_T$ with the sheaf $j_!\mathbb{F}_p$ and the Fourier transform with 
+                            the Fourier-Deligne transform. The dichotomy $p \mid (q-1)$ vs $p \nmid (q-1)$ arises from 
+                            the vanishing of $H^*_c(\mathbb{G}_m, \mathbb{F}_p)$.
                         </p>
                         <div class="paper-links">
                             <a href="writings/cohomological_self_duality.pdf">PDF</a>
