@@ -40,7 +40,9 @@
                     <p class="tagline">Theoretical Computer Science · Number Theory · Combinatorics</p>
                     <p class="bio">
                         I'm a researcher interested in the mathematical foundations of computation. 
-                        One of my major work explore circuite complexity on finite fields. I also did some work relating spanning trees to modular forms.
+                        My work explores circuit complexity over finite fields, with connections to 
+                        representation theory and algebraic geometry. I also study modular forms 
+                        and their interaction with combinatorial structures like spanning trees.
                     </p>
                     <p class="bio">
                         Outside of research, I play rhythm games and watch cute girl anime.
@@ -50,6 +52,8 @@
 
             <section id="research" class="section">
                 <h2>Research</h2>
+                
+                <h3 class="research-area">Circuit Complexity</h3>
                 <div class="papers">
                     <article class="paper">
                         <h3>Gate Complexity of the Algebraic Torus: the General Case</h3>
@@ -79,7 +83,23 @@
                             over $\mathbb{F}_{2^k}$, exploiting the self-duality $\widehat{\mathbf{1}_T} = \mathbf{1}_T$.
                         </p>
                         <div class="paper-links">
-                            <a href="writings/gate_complexity_v5.pdf">PDF</a>
+                            <a href="writings/gate_complexity_focs.pdf">PDF</a>
+                        </div>
+                    </article>
+
+                    <article class="paper">
+                        <h3>A Cohomological Interpretation of Gate Complexity</h3>
+                        <p class="authors">Yipin Wang</p>
+                        <p class="venue">Preprint, 2026</p>
+                        <p class="abstract">
+                            We prove that the gate complexity $t(p,q,n) = (q-1)^{n-1}$ equals the trace of Frobenius 
+                            on the compactly supported étale cohomology of the torus:
+                            $t(p,q,n) = \mathrm{Tr}(\mathrm{Frob}_q \mid H^*_c(\mathbb{G}_m^{n-1}, \mathbb{F}_p))$.
+                            This places circuit complexity in the framework of the Weil conjectures and suggests 
+                            connections to the Langlands program via the Steinberg representation.
+                        </p>
+                        <div class="paper-links">
+                            <a href="writings/cohomological_self_duality.pdf">PDF</a>
                         </div>
                     </article>
 
@@ -95,7 +115,7 @@
                             over $\mathbb{F}_p$ cannot compute $\mathbf{1}[\sum_i x_i \equiv 0 \pmod{p}]$.
                         </p>
                         <div class="paper-links">
-                            <a href="writings/switching_lemma_v6.pdf">PDF</a>
+                            <a href="writings/switching_lemma_v9.pdf">PDF</a>
                             <a href="https://eccc.weizmann.ac.il/report/2026/014/">ECCC</a>
                             <a href="https://github.com/TianyiLemon/fourier-switching-lemma-Fp">GitHub</a>
                         </div>
@@ -113,6 +133,27 @@
                         </p>
                         <div class="paper-links">
                             <a href="writings/cdt_switching_lemma.pdf">PDF</a>
+                        </div>
+                    </article>
+                </div>
+
+                <h3 class="research-area">Number Theory and Combinatorics</h3>
+                <div class="papers">
+                    <article class="paper">
+                        <h3>Alien Primes and Weighted Cohomology of the Bruhat–Tits Building</h3>
+                        <p class="authors">Yipin Wang</p>
+                        <p class="venue">Preprint, 2026</p>
+                        <p class="abstract">
+                            We study "alien primes" arising from a Markov chain on $\mathbb{P}^1(\mathbb{F}_p)$ 
+                            defined by spanning tree weights. These primes divide the determinant of a transition 
+                            operator restricted to the Steinberg representation but do not divide the discriminant 
+                            of the Hecke algebra. We prove that alien primes measure a lattice index in the Steinberg 
+                            representation:
+                            $[L_{\mathrm{std}} : L_{\mathrm{Markov}}] = 3^k \times \prod(\text{alien primes})$.
+                            This suggests a new arithmetic invariant living in building cohomology, not modular curve cohomology.
+                        </p>
+                        <div class="paper-links">
+                            <a href="writings/building_paper.pdf">PDF</a>
                         </div>
                     </article>
 
@@ -155,7 +196,15 @@
                     Feel free to reach out if you want to discuss research, collaborate, or just chat about interesting problems.
                 </p>
                 <ul class="contact-links">
-                    <li><span class="contact-label">Email:</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe87978e979089ccbe979292979091978dd09b9a8b">[email&#160;protected]</a></li>
+                    <li><span class="contact-label">Email:</span> <a href="mailto:yipinw2@illinois.edu">yipinw2@illinois.edu</a></li>
                     <li><span class="contact-label">GitHub:</span> <a href="https://github.com/TianyiLemon">github.com/TianyiLemon</a></li>
                 </ul>
-            </sec
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Yipin Wang</p>
+        </footer>
+    </div>
+</body>
+</html>
