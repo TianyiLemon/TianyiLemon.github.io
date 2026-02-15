@@ -69,7 +69,7 @@
                             on $H^*_c(\mathbb{G}_m^{n-1}, \mathbb{F}_p)$.
                         </p>
                         <div class="paper-links">
-                            <a href="writings/gate_complexity_focs.pdf">PDF</a>
+                            <a href="writings/gate_complexity_anonymous.pdf">PDF</a>
                         </div>
                     </article>
 
@@ -127,23 +127,39 @@
                 <h3 class="research-area">Number Theory and Combinatorics</h3>
                 <div class="papers">
                     <article class="paper">
-                        <h3>The Steinberg Determinant and Alien Primes</h3>
+                        <h3>Gibbs Intertwining Operators and the Steinberg Polynomial</h3>
                         <p class="authors">Yipin Wang</p>
                         <p class="venue">Preprint, 2026</p>
                         <p class="abstract">
-                            We introduce the Steinberg determinant $\delta_p = \det(I - P|_{\mathrm{St}_p})$, 
-                            where $P$ is a weighted matrix on $\mathbb{P}^1(\mathbb{F}_p)$ arising from 
-                            spanning tree weights. Writing $\delta_p = n_p/(2^p - 1)$, we define 
-                            <em>alien primes</em> as odd primes $\ell > 3$ dividing $n_p$ but not $p(2^p - 1)$. 
-                            We prove that $n_p$ is the specialization at $q = 2$ of a polynomial $n_p(q) \in \mathbb{Z}[q]$,
-                            giving a motivic interpretation: alien primes are primes $\ell$ where $H^*(X_p, \mathbb{Z}_\ell)$ 
-                            has torsion for the variety $X_p$ with $|X_p(\mathbb{F}_q)| = n_p(q)$.
-                            We also prove that alien primes are disjoint from Hecke discriminant primes
-                            and observe that $3 \mid n_p$ for all $p \geq 5$.
+                            We study the Markov operator $P$ on $\mathbb{P}^1(\mathbb{F}_p)$ with Gibbs weights $w_r = q^{p-r}/(q^p - 1)$,
+                            showing it factors as a deformed intertwining operator $L_w \cdot \pi(w_0)$ that does not belong to the 
+                            Iwahori&ndash;Hecke algebra. The main result is a twisted circulant reduction: 
+                            $n_p(q) = -(q-1)(q^p-1)\det(I - C)$, where $C = Q \cdot W$ on $\mathbb{F}_p^*$ mixes the additive 
+                            convolution $W$ with multiplicative inversion $Q\colon j \mapsto j^{-1}$. The proof relies on two 
+                            structural identities&mdash;boundary decoupling (Schur complement equals 1) and the $-q$ identity 
+                            $\mathbf{w}^T(I-C)^{-1}\mathbf{1} = -q$&mdash;the latter proved via a telescoping argument exploiting 
+                            the geometric structure of the Gibbs weights.
                         </p>
                         <div class="paper-links">
-                            <a href="writings/steinberg_determinant_paper_v2.pdf">PDF</a>
-                            <a href="writings/steinberg_computation_v2.py">Code</a>
+                            <a href="writings/gibbs_intertwiner.pdf">PDF</a>
+                        </div>
+                    </article>
+
+                    <article class="paper">
+                        <h3>The Steinberg Polynomial: Endoscopic Decomposition and Motivic Factorization</h3>
+                        <p class="authors">Yipin Wang</p>
+                        <p class="venue">Preprint, 2026</p>
+                        <p class="abstract">
+                            We introduce the Steinberg polynomial $n_p(q) = (q^p - 1)\det(I - P|_{\mathrm{St}_p}) \in \mathbb{Z}[q]$
+                            and show it admits an endoscopic decomposition 
+                            $n_p = n_p^{\mathrm{GL}_2} - \bigl(\frac{-2}{p}\bigr) n_p^T$
+                            into palindromic and anti-palindromic parts, together with a motivic factorization into CM abelian 
+                            varieties over $\mathbb{F}_2$ with CM by subfields of $\mathbb{Q}(\sqrt{-2}, \zeta_p)$.
+                            We define <em>alien primes</em> as odd primes $\ell > 3$ dividing $n_p(2)$ but not $p(2^p - 1)$, 
+                            and prove they are disjoint from Hecke discriminant primes.
+                        </p>
+                        <div class="paper-links">
+                            <a href="writings/steinberg_paper_v5.pdf">PDF</a>
                         </div>
                     </article>
 
